@@ -21,4 +21,31 @@ async function createUser(req, res) {
   }
 }
 
-export { getUsers, createUser };
+async function updateUser(req, res) {
+  try {
+    const { id } = req.params;
+    await User.update(req.body, {
+      where: {
+        id: id,
+      }
+    });
+    res.status(200).json({ msg: "User Updated!" });
+  } catch(error) {
+    res.status(400).json({ msg: error.message });
+  }
+}
+
+async function deleteUser(req, res) {
+  try {
+    await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json({ msg: "User Deleted!" });
+  } catch (error) {
+    res.status(400).json({ msg: error.message });
+  }
+}
+
+export { getUsers, createUser, updateUser, deleteUser };

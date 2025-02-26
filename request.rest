@@ -1,11 +1,23 @@
 GET http://localhost:5000/users
 
 ###
-POST http://localhost:5000/add-user
+POST http://localhost:5000/add-users
 Content-Type: application/json
 
 {
-    "name": "bjir",
-    "email": "bjir@gmail.com",
-    "gender": "Male"
+    "name": "upcloud",
+    "email": "cekcloud@gmail.com",
+    "gender": "nonbiner"
 }
+
+###
+PATCH http://localhost:5000/user/2
+Content-Type: application/json
+
+{
+    "name": "faizzz",
+    "email": "effendi@gmail.com"
+}
+
+###
+DELETE http://localhost:5000/user/5
