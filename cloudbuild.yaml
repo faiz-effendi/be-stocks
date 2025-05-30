@@ -35,7 +35,7 @@ steps:
         "deploy",
         "be-projek-mobile",
         "--image",
-        "gcr.io/$PROJECT_ID/t7-tcc-be",
+        "gcr.io/$PROJECT_ID/be-projek-mobile",
         "--timeout",
         "1000s",
         "--port",
