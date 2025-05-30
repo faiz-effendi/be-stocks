@@ -8,4 +8,4 @@ app.use(cors());
 app.use(express.json());
 app.use(CoinDataRoute);
 
-app.listen(5000, () => console.log("Server connected"));
+app.listen(3001, () => console.log("Server connected"));
