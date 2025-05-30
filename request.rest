@@ -5,9 +5,9 @@ POST http://localhost:5000/add-users
 Content-Type: application/json
 
 {
-    "name": "upcloud",
-    "email": "cekcloud@gmail.com",
-    "gender": "nonbiner"
+    "name": "faizOnCloud2",
+    "email": "faizmelayanglayang2@gmail.com",
+    "gender": "sarden kaleng"
 }
 
 ###
@@ -20,4 +20,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:5000/user/5
+DELETE http://localhost:5000/user/7
