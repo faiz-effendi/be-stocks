@@ -1,15 +1,15 @@
 steps:
   # Ngambil data env yg disimpen di cloud storage pake gsuri
   - name: "gcr.io/cloud-builders/gsutil"
-    args: ["cp", "gs://kelompok-tcc-e07/.env", ".env"]
+    args: ["cp", "gs://kelompok-tcc-e07/stocks_project.env", ".env"]
 
-  # membuat image dengan menjalankan perintah "cloud build -t .." 
+  # membuat image dengan menjalankan perintah "cloud build -t .."
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/be-projek-mobile", "."]
+    args: ["build", "-t", "gcr.io/$PROJECT_ID/.env", "stocks_project.env"]
 
   # push image yang sudah dibuat ke Artifact Registry dengan menjalankan "docker push .."
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/be-projek-mobile"]
+    args: ["push", "gcr.io/$PROJECT_ID/be-stocks"]
 
   # Melakukan deploy ke cloud run menggunakan image yg telah di-upload/push pada langkah sebelumnya
   # Pada bagian ini, dijalankan perintah sebagai berikut.
@@ -18,7 +18,7 @@ steps:
   #       --timeout 1000s \
   #       --port 3001 \
   #       --region us-central1 \
-  #       --allow-unauthenticated' \ 
+  #       --allow-unauthenticated' \
 
   # Keterangan:
   # "gcloud run deploy be": Perintah yang digunakan untuk mendeploy service ke cloud run dengan nama "be"
@@ -33,9 +33,9 @@ steps:
       [
         "run",
         "deploy",
-        "be-projek-mobile",
+        "be-stocks",
         "--image",
-        "gcr.io/$PROJECT_ID/be-projek-mobile",
+        "gcr.io/$PROJECT_ID/be-stocks",
         "--timeout",
         "1000s",
         "--port",

@@ -2,13 +2,15 @@ import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
 
 // Membuat tabel "user"
-const CoinModel = db.define(
-  "coin_data", // Nama Tabel
+const StockModel = db.define(
+  "stocks", // Nama Tabel
   {
-    name: Sequelize.STRING(255),
-    short_name: Sequelize.STRING(6),
     image_url: Sequelize.TEXT,
-    current_price: Sequelize.INTEGER
+    code: Sequelize.STRING(9),
+    name: Sequelize.STRING(255),
+    price: Sequelize.INTEGER,
+    marketcap: Sequelize.BIGINT,
+    dividend: Sequelize.DOUBLE
   }, {
     freezeTableName: true,
     timestamps: false,
@@ -17,4 +19,4 @@ const CoinModel = db.define(
 
 db.sync().then(() => console.log("Database synced"));
 
-export default CoinModel;
+export default StockModel;

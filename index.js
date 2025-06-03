@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
-import CoinDataRoute from './routes/CoinDataRoute.js';
+import StockDataRoute from './routes/StockDataRoute.js';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(CoinDataRoute);
+app.use(StockDataRoute);
 
 app.listen(3001, () => console.log("Server connected"));
