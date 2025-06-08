@@ -1,7 +1,7 @@
 steps:
   # Ngambil data env yg disimpen di cloud storage pake gsuri
   - name: "gcr.io/cloud-builders/gsutil"
-    args: ["cp", "gs://kelompok-tcc-e07/stocks_project.env", ".env"]
+    args: ["cp", "gs://stocks_tpm/stocks_project.env", ".env"]
 
   # membuat image dengan menjalankan perintah "cloud build -t .."
   - name: "gcr.io/cloud-builders/docker"
