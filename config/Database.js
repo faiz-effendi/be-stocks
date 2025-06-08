@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv"; //untuk menyembunyikan data berharga
 
-dotenv.config();//ngekonfigurasi data dari file.env
+dotenv.config(); //ngekonfigurasi data dari file.env
 
 //Bikin variabel yg nerima data yg dirahasiakan
 const DB_NAME = process.env.DB_NAME;
